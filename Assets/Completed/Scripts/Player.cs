@@ -35,6 +35,7 @@ namespace Completed
 			food = GameManager.instance.playerFoodPoints;
 			
 			//Set the foodText to reflect the current player food total.
+			foodText = GameObject.Find("LevelText").GetComponent<Text>();
 			foodText.text = "Food: " + food;
 			
 			//Call the Start function of the MovingObject base class.
@@ -135,7 +136,7 @@ namespace Completed
 			
 			//Call the AttemptMove method of the base class, passing in the component T (in this case Wall) and x and y direction to move.
 			base.AttemptMove <T> (xDir, yDir);
-			
+
 			//Hit allows us to reference the result of the Linecast done in Move.
 			RaycastHit2D hit;
 			
